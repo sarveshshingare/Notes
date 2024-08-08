@@ -7,6 +7,7 @@ id: "custom"
 # Git and Github
 
 ## Basics
+<br>
 
  ***Q) What is Git?<br>***
 >Git is a version control system that allows you to track changes to your files and collaborate with others. It is used to manage the history of your code and to merge changes from different branches.
@@ -32,7 +33,7 @@ Alternatives:  Gitlab, bitbucket, Onedev, Codeberg, Gitea , Google cloud source 
     It is a file which is kept in a folder which is empty and we want to track it ==(git doesn't track empty folders)==
     For example : here both images and logs are empty folder but as we want to keep track of images we add .gitkeep file into it
 
-NOTE Basic Git commands
+### Basic Git commands
 
 | Command                       | Description                                      | Example                                            |
 |-------------------------------|--------------------------------------------------|----------------------------------------------------|
@@ -56,9 +57,40 @@ NOTE Basic Git commands
 | `git reset --hard <commit>`   | Resets the index and working tree to a specific commit | `git reset --hard abc1234`                    |
 
 
+<br>
+<br>
 
+### Commit
+  - commit is a way to save your changes to your repository. 
+  - It is a way to record your changes and make them permanent. 
 
+![commit](/Git/Images/commit.png)
 
+<br>
 
+### Complete git flow
+A complete git flow, along with pushing the code to github looks like this:
 
+![workflow](/Git/Images/workflow.png)
 
+### Stage
+Stage is a way to tell git to track a particular file or folder. You can use the following command to stage a file:
+
+### gitignore
+  - Gitignore is a file that tells git which files and folders to ignore.
+  - It is a way to prevent git from tracking certain files or folders.
+  - You can create a gitignore file and add list of files and folders to ignore by using the following command:
+  ```javascript
+      node_modules
+      .env
+      .vscode 
+  ```
+### Git Snapshots
+A git snapshot is a point in time in the history of your code. It represents a specific version of your code, including all the files and folders that were present at that time. Each snapshot is identified by a unique hash code, which is a string of characters that represents the contents of the snapshot. 
+
+### 3 Musketeers of git
+**The three musketeers of git are:**
+
+1. Commit Object
+2. Tree Object
+3. Blob Object

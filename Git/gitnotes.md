@@ -1,3 +1,9 @@
+---
+id: "custom"
+---
+@import "note-style.less"
+<link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+
 # Git and Github
 
 ## Basics
@@ -18,13 +24,19 @@
 Alternatives:  Gitlab, bitbucket, Onedev, Codeberg, Gitea , Google cloud source repositories 
         
 ### Why do we need version control systems?
-Version control systems are used to manage the history of your code. They allow you to track changes to your files and to collaborate with others. Version control systems are essential for software development. Consider version control as a checkpoint in game. You can move to any time in the game and you can always go back to the previous checkpoint. This is the same concept in software development.
+- Version control systems are used to manage the history of your code. They allow you to track changes to your files and to collaborate with others.Consider version control as a checkpoint in game. You can move to any time in the game and you can always go back to the previous checkpoint.
 
-Before Git became mainstream, version control systems were used by developers to manage their code. They were called SCCS (Source Code Control System).
+- Before Git became mainstream, version control systems were used by developers to manage their code. They were called SCCS (Source Code Control System).
 
-.gitkeep file
-is kept in a folder which is empty and we want to track it (git doesn't track empty folders)
-For example -here both images and logs are empty folder but as we want to keep track of images we add .gitkeep file into it
+!!! gitkeep
+    It is a file which is kept in a folder which is empty and we want to track it ==(git doesn't track empty folders)==
+    For example : here both images and logs are empty folder but as we want to keep track of images we add .gitkeep file into it
 
 
-`
+
+
+
+
+
+
+

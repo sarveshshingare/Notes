@@ -89,8 +89,29 @@ Stage is a way to tell git to track a particular file or folder. You can use the
 A git snapshot is a point in time in the history of your code. It represents a specific version of your code, including all the files and folders that were present at that time. Each snapshot is identified by a unique hash code, which is a string of characters that represents the contents of the snapshot. 
 
 ### 3 Musketeers of git
-**The three musketeers of git are:**
+The three musketeers of git are:
 
-1. Commit Object
-2. Tree Object
-3. Blob Object
+    1. Commit Object
+    2. Tree Object
+    3. Blob Object
+
+#### Commit Object
+Each commit in the project is stored in .git folder in the form of a commit object. A commit object contains the following information:
+- Tree Object
+- Parent Commit Object
+- Author
+- Committer
+- Commit Message
+
+#### Tree Object
+Tree Object is a container for all the files and folders in the project. It contains the following information:
+
+- File Mode
+- File Name
+- File Hash
+- Parent Tree Object
+`Everything is stored as key-value pairs in the tree object. The key is the file name and the value is the file hash.
+`
+
+#### Blob Object
+Blob Object is present in the tree object and contains the actual file content. This is the place where the file content is stored.

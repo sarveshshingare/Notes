@@ -1,14 +1,88 @@
+// pattern 1
+// ****
+// ****
+// ****
+// ****
+/*#include <iostream>
+using namespace std;
+
+int main()
+{
+    for (int i = 0; i < 4; i++)
+    {
+
+        for (int j = 0; j < 4; j++)
+        {
+            cout << "*";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+*/
+
+// pattern 2
+// 111
+// 222
+// 333
+/*#include <iostream>
+using namespace std;
+
+int main()
+{
+    for (int i = 1; i <= 3; i++)
+    {
+        for (int j = 1; j <= 3; j++)
+        {
+            cout << i;
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+*/
+// pattern 4
+// 1 2 3 4
+// 1 2 3 4
+// 1 2 3 4
+// 1 2 3 4
+
 // #include <iostream>
 // using namespace std;
 
 // int main()
 // {
-//     for (int i = 0; i < 4; i++)
+//     for (int i = 1; i <= 4; i++)
 //     {
-//         /* code */
-//         for (int j = 0; j < 4; j++)
+//         for (int j = 1; j <= 4; j++)
 //         {
-//             cout << "*";
+//             cout << j << " ";
+//         }
+//         cout << endl;
+//     }
+
+//     return 0;
+// }
+// -------------------------------------------------
+// pattern 4
+// 123
+// 456
+// 789
+
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     int num = 1;
+//     for (int i = 1; i <= 3; i++)
+//     {
+//         for (int i = 0; i < 3; i++)
+//         {
+//             cout << num;
+//             num += 1;
 //         }
 //         cout << endl;
 //     }
@@ -16,106 +90,185 @@
 //     return 0;
 // }
 
-// Sarvesh Shingare
-// 202101050031
+// pattern 5
+// *
+// * *
+// * * *
+// * * * *
 
-#include <mpi.h>
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     for (int i = 1; i <= 4; i++)
+//     {
+//         for (int j = 1; j <= i; j++)
+//         {
+//             cout << "* ";
+//         }
+//         cout << endl;
+//     }
+
+//     return 0;
+// }
+
+// pattern 6
+// 1
+// 22
+// 333
+// 4444
+
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     for (int i = 1; i <= 4; i++)
+//     {
+//         for (int j = 1; j <= i; j++)
+//         {
+//             cout << i;
+//         }
+//         cout << endl;
+//     }
+
+//     return 0;
+// }
+
+// pattern 7
+// 1
+// 2 3
+// 4 5 6
+// 7 8 9 10
+
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     int num = 1;
+//     for (int i = 1; i <= 4; i++)
+//     {
+//         for (int j = 1; j <= i; j++)
+//         {
+//             cout << num << " ";
+//             num += 1;
+//         }
+//         cout << endl;
+//     }
+
+//     return 0;
+// }
+
+// pattern 8
+// 1
+// 2 3
+// 3 4 5
+// 4 5 6 7
+// #include <iostream>
+// using namespace std;
+// int main()
+// {
+//     int num = 1;
+//     for (int i = 1; i <= 4; i++)
+//     {
+//         num = i;
+
+//         for (int j = 1; j <= i; j++)
+//         {
+//             cout << num << " ";
+//             num += 1;
+//         }
+//         cout << endl;
+//     }
+
+//     return 0;
+// }
+
+// #include <iostream>
+// using namespace std;
+// int main()
+// {
+
+//     for (int i = 1; i <= 4; i++)
+//     {
+
+//         for (int j = i; j < i * 2; j++)
+//         {
+//             cout << j << " ";
+//                 }
+//         cout << endl;
+//     }
+
+//     return 0;
+// }
+
+// pattern 9
+// 1
+// 2 1
+// 3 2 1
+// 4 3 2 1
+
+// #include <iostream>
+// using namespace std;
+// int main()
+// {
+
+//     for (int i = 1; i <= 4; i++)
+//     {
+//         for (int j = 1; j <= i; j++)
+//         {
+//             cout << i - j + 1 << " ";
+//         }
+//         cout << endl;
+//     }
+
+//     return 0;
+// }
+
+// pattern 10
+// A A A
+// B B B
+// C C C
+
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {
+//     for (int i = 1; i <= 4; i++)
+
+//     {
+//         for (int j = 1; j <= 4; j++)
+//         {
+//             cout << (char)('A' + i - 1) << " ";
+//         }
+//         cout << endl;
+//     }
+
+//     return 0;
+// }
+
+// pattern 11
+// A B C
+// A B C
+// A B C
+
 #include <iostream>
-#include <vector>
-#include <cmath>
+using namespace std;
 
-#define N 4                // Matrix size (NxN)
-#define BLOCK_SIZE (N / 2) // Assuming a 2x2 process grid
-
-void multiplyMatrices(const std::vector<int> &A, const std::vector<int> &B, std::vector<int> &C)
+int main()
 {
-    for (int i = 0; i < BLOCK_SIZE; ++i)
+    for (int i = 1; i <= 4; i++)
+
     {
-        for (int j = 0; j < BLOCK_SIZE; ++j)
+        for (int j = 1; j <= 4; j++)
         {
-
-            for (int k = 0; k < BLOCK_SIZE; ++k)
-            {
-                C[i * BLOCK_SIZE + j] += A[i * BLOCK_SIZE + k] * B[k * BLOCK_SIZE + j];
-            }
+            cout << (char)('A' + j - 1) << " ";
         }
-    }
-}
-int main(int argc, char \*_argv)
-{
-    int rank, size, sqrt_p;
-    MPI_Init(&argc, &argv);
-    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-    MPI_Comm_size(MPI_COMM_WORLD, &size);
-    sqrt_p = std::sqrt(size);
-    if (sqrt_p _ sqrt * p != size || N % sqrt_p != 0)
-    {
-        if (rank == 0)
-        {
-            std::cerr << "Error: The number of processes must be a perfect square and divisible by N." << std::endl;
-        }
-        MPI_Finalize();
-        return -1;
-    }
-    int subMatSize = N / sqrt_p;
-    std::vector<int> A(subMatSize * subMatSize, 0);
-    std::vector<int> B(subMatSize _ subMatSize, 0);
-    std::vector<int> C(subMatSize _ subMatSize, 0); // Result matrix
-                                                    // Initialize matrices A and B
-    for (int i = 0; i < subMatSize \_ subMatSize; ++i)
-    {
-        A[i] = 1; // Example initialization
-        B[i] = 1; // Example initialization
+        cout << endl;
     }
 
-    MPI_Comm gridComm;
-    int dims[2] = {sqrt_p, sqrt_p};
-    int periods[2] = {1, 1}; // Enable wrap-around (cyclic shifts)
-    MPI_Cart_create(MPI_COMM_WORLD, 2, dims, periods, 1, &gridComm);
-
-    int coords[2];
-    MPI_Cart_coords(gridComm, rank, 2, coords);
-
-    int left, right, up, down;
-    MPI_Cart_shift(gridComm, 1, -1, &right, &left);
-    MPI_Cart_shift(gridComm, 0, -1, &down, &up);
-
-    // Initial alignment for A and B
-    MPI *Sendrecv_replace(&A[0], subMatSize * subMatSize, MPI * INT, left, 0, right, 0, gridComm, MPI_STATUS_IGNORE);
-    MPI_Sendrecv_replace(&B[0], subMatSize * subMatSize, MPI_INT, up, 0, down,
-                         0, gridComm, MPI_STATUS_IGNORE);
-
-    // Perform Cannon's algorithm iterations for (int i = 0; i < sqrt_p; ++i)
-    {
-        multiplyMatrices(A, B, C);
-
-        // Shift left A
-        MPI_Sendrecv_replace(&A[0], subMatSize * subMatSize, MPI_INT, left, 0, right, 0, gridComm, MPI_STATUS_IGNORE);
-        // Shift up B
-        MPI_Sendrecv_replace(&B[0], subMatSize * subMatSize, MPI_INT, up, 0, down,
-
-                             0, gridComm, MPI_STATUS_IGNORE);
-    }
-
-    // Gather results at rank 0 std::vector<int> finalResult; if (rank == 0)
-    {
-        finalResult.resize(N _ N);
-    }
-    MPI_Gather(&C[0], subMatSize _ subMatSize, MPI_INT, &finalResult[0], subMatSize \* subMatSize, MPI_INT, 0, MPI_COMM_WORLD);
-
-    if (rank == 0)
-    {
-        std::cout << "Result matrix:" << std::endl;
-        for (int i = 0; i < N; ++i)
-        {
-            for (int j = 0; j < N; ++j)
-            {
-                std::cout << finalResult[i * N + j] << " ";
-            }
-            std::cout << std::endl;
-        }
-    }
-
-    MPI_Finalize();
     return 0;
 }

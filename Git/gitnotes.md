@@ -34,6 +34,30 @@ Alternatives:  Gitlab, bitbucket, Onedev, Codeberg, Gitea , Google cloud source 
     For example : here both images and logs are empty folder but as we want to keep track of images we add .gitkeep file into it
 
 ### Basic Git commands
+| Command                       | Description                                      | Example                                            |
+|-------------------------------|--------------------------------------------------|----------------------------------------------------|
+| `git init`                    | Initializes a new Git repository                 | `git init`                                         |
+| `git clone <url>`             | Clones a repository from a remote source         | `git clone https://github.com/user/repo.git`       |
+| `git status`                  | Displays the status of the working directory     | `git status`                                       |
+| `git add <file>` or `git add .`             | Adds a file to the staging area                  | `git add filename.txt`                             |
+| `git commit -m "message"`     | Commits the staged changes with a message        | `git commit -m "Initial commit"`                   |
+| `git push`                    | Pushes the committed changes to a remote repo    | `git push origin main`                             |
+| `git pull`                    | Fetches and merges changes from the remote repo  | `git pull origin main`                             |
+| `git branch`                  | Lists all branches in the repository             | `git branch`                                       |
+| `git checkout <branch>`       | Switches to a different branch                   | `git checkout feature-branch`                      |
+| `git merge <branch>`          | Merges a branch into the current branch          | `git merge feature-branch`                         |
+| `git log`                     | Displays the commit history                      | `git log`                                          |
+| `git remote -v`               | Shows the remote repositories                    | `git remote -v`                                    |
+| `git fetch`                   | Downloads objects and refs from another repository | `git fetch origin`                                |
+| `git rebase <branch>`         | Reapplies commits on top of another base tip     | `git rebase main`                                  |
+| `git diff`                    | Shows the changes between commits, commit and working tree, etc. | `git diff`                                  |
+| `git stash`                   | Stashes changes in a dirty working directory     | `git stash`                                        |
+| `git tag <tagname>`           | Creates a tag for a specific commit              | `git tag v1.0.0`                                   |
+| `git reset --hard <commit>`   | Resets the index and working tree to a specific commit | `git reset --hard abc1234`                    |
+
+
+<br>
+<br>
 
 ### Commit
 

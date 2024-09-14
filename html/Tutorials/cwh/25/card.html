@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: gainsboro;
+      
+      }
+      .card {
+        margin: 50px;
+        height: 380px;
+        width: 250px;
+        padding: 4px;
+        background-color: white;
+        border-radius: 7px;
+        border: 1px solid black;
+      }
+
+      .aiImage {
+        width: 250px;
+        border-radius: 7px;
+        object-fit: fill;
+      }
+
+      .capsules {
+        margin-top: 15px;
+        padding-left: 10px;
+      }
+      .capsules span {
+        padding: 3px 5px 3px 5px;
+        border: 1px solid black;
+        border-radius: 20px;
+      }
+
+      h2 {
+        margin: 15px 0px 5px 10px;
+      }
+
+      .content {
+        margin: 5px 0px 10px 10px;
+      }
+
+      .readMoreButton {
+        display: flex;
+        justify-content: center;
+       
+        
+      }
+
+      .buttonmore {
+        margin-top: 10px;
+        text-align: center;
+        padding: 7px 12px;
+        border-radius: 15px;
+        color: #49bfe3;
+        font-weight:500;
+        background-color: #d4eaff;
+        border: none;
+      
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <!-- image -->
+      <div>
+        <img src="/html/cwh/25/image.png" alt="image" class="aiImage" />
+      </div>
+
+      <!-- text -->
+      <div class="capsules">
+        <span>Nature</span>
+        <span>Lake</span>
+      </div>
+      <h2>Lago di braies</h2>
+
+      <p class="content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A eligendi
+        impedit repellendus culpa, excepturi voluptates saepe ratione, veritatis
+      </p>
+
+      <!-- Read more button -->
+      <div class="readMoreButton">
+        <button class="buttonmore">Read More</button>
+      </div>
+    </div>
+  </body>
+</html>

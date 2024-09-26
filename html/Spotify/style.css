@@ -6,7 +6,7 @@
 }
 
 body {
-  /* background-color: black; */
+  background-color: black;
   /* color: white; */
 }
 
@@ -16,7 +16,8 @@ body {
 }
 
 .right {
-  width: 75px;
+  padding: 10px 0px;
+  width: 75vw;
 }
 .home {
 }
@@ -70,11 +71,75 @@ body {
   text-decoration: none;
   font-weight: 500;
 }
-.heading-left{
+.heading-left {
   display: flex;
-  
+
   gap: 15px;
   font-weight: 500;
   align-items: center;
-  
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-container {
+  width: 75vw;
+  height: 100%;
+}
+
+.spotifyPlaylist {
+  padding: 16px;
+}
+
+.spotifyPlaylist .card {
+  width: 200px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #252525;
+  margin-top: 10px;
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.cardContainer {
+  margin: 30px;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+
+.play {
+  height: 45px;
+  position: absolute;
+  bottom: 125px;
+  right: -55px;
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+.card > * {
+  padding-top: 10px;
+}
+
+.card:hover {
+}
+
+.signUpBtn {
+  background-color: black;
+  color: white;
+
+  font-weight: bold;
+}
+
+/* .signUpBtn:hover{
+  font
+} */

@@ -133,13 +133,45 @@ body {
 .card:hover {
 }
 
+.buttons {
+  margin: 10px 20px;
+}
+.nav {
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .signUpBtn {
   background-color: black;
-  color: white;
-
+  color: rgba(34, 34, 34, 1);
   font-weight: bold;
+  font-size: 16px;
+  padding: 6px;
+  margin-right: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
-/* .signUpBtn:hover{
-  font
-} */
+.signUpBtn:hover {
+  transform: scale(1.05);
+  color: white;
+}
+
+.loginBtn {
+  background-color: white;
+  border-radius: 21px;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+  width: 80px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+.loginBtn:hover {
+  font-weight: bold;
+  transform: scale(1.05);
+}

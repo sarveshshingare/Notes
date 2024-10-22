@@ -327,14 +327,12 @@ input[type="range"]::-webkit-slider-thumb {
   }
 }
 
-@media (max-width:1400px){
-
-  .left{
+@media (max-width: 1400px) {
+  .left {
     background-color: red;
     position: absolute;
     left: -100%;
-    transition: all 0.5s ease-in  ;
+    transition: all 0.5s ease-in;
     z-index: 1;
   }
-
 }

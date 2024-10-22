@@ -1,16 +1,24 @@
-let audioPlayer = new Audio();
+let track = new Audio();
+let lastTrackPlayed = new Audio();
+async function fetchData() {
+  try {
+    let response = await fetch("http://localhost:3000/songs");
+    let data = await response.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.error("Fetch error:", error);
+    return [];
+  }
+}
 
-fetch("http://localhost:3000/songs")
-  .then((response) => response.json())
-  .then((data) => {
-    const songUL = document
-      .querySelector(".songList")
-      .getElementsByTagName("ul")[0];
-
-    // Create a list of songs
-    data.forEach((song) => {
-      const songName = song.replace(/\.mp3$/, "");
-      const listItem = document.createElement("li");
+async function addSongsInLibrary(data) {
+  playSong(data[0], (pause = true));
+  let songUl = document.querySelector(".songList ul");
+  data.forEach((song) => {
+    const songName = song.replace(/\.mp3/, "");
+    const listItem = document.createElement("li");
+    try {
       listItem.innerHTML = `
                 <div class="songInfo">
                   <img src="/images/music.svg" alt="music" />
@@ -29,71 +37,86 @@ fetch("http://localhost:3000/songs")
                   />
                 </div>
               `;
+      songUl.appendChild(listItem);
+    } catch (error) {
+      console.log("error adding songs in library", error);
+    }
 
-      // Add click event to play the song when clicked
-      listItem.addEventListener("click", () => {
-        playSong(song);
-      });
-
-      songUL.appendChild(listItem);
+    // play song if clicked from library
+    listItem.addEventListener("click", () => {
+      playSong(song);
     });
-  })
-  .catch((error) => console.error("Error fetching songs:", error));
+  });
+}
 
-// Function to play a selected song
-function playSong(songFileName) {
-  // var audioPlayer = new Audio(`http://localhost:3000/songs/${songFileName}`);
-  audioPlayer.src = `http://localhost:3000/songs/${songFileName}`;
+function playSong(songFileName, pause = false) {
+  track.src = `http://localhost:3000/songs/${songFileName}`;
+  seekBar(track);
+  if (!pause) {
+    track.play();
+    playimg.src = "/images/pause.svg";
+  } else {
+    playimg.src = "/images/play.svg";
+  }
+  const songName = songFileName.replace(/\.mp3/, "");
+  updateSeekBarDetails(songName);
+}
 
-  // Get elements
-
+function seekBar(track) {
   const seekBar = document.getElementById("seekBar");
   const currentTimeEl = document.getElementById("currentTime");
   const durationEl = document.getElementById("duration");
-
-  // Update the seek bar as the audio plays
-  audioPlayer.addEventListener("timeupdate", () => {
-    // Update seek bar value
-    seekBar.value = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-
-    // Update current time display
-    currentTimeEl.textContent = formatTime(audioPlayer.currentTime);
+  //   // Update the seek bar as the audio plays
+  track.addEventListener("timeupdate", () => {
+    seekBar.value = (track.currentTime / track.duration) * 100;
+    currentTimeEl.textContent = formatTime(track.currentTime);
   });
 
   // Set the duration when the metadata is loaded
-  audioPlayer.addEventListener("loadedmetadata", () => {
-    // Set the max value of the seek bar to the duration of the audio
+  track.addEventListener("loadedmetadata", () => {
     seekBar.max = 100;
-
-    // Update the duration display
-    durationEl.textContent = formatTime(audioPlayer.duration);
+    durationEl.textContent = formatTime(track.duration);
   });
 
   // Seek when the user drags the seek bar
   seekBar.addEventListener("input", () => {
-    const seekTo = (seekBar.value / 100) * audioPlayer.duration;
-    audioPlayer.currentTime = seekTo;
+    console.log(seekBar.value);
+    const seekTo = (seekBar.value / 100) * track.duration;
+    track.currentTime = seekTo;
   });
-
   // Format time in minutes and seconds
   function formatTime(time) {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
+
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   }
-  audioPlayer.play();
-  playimg.src = "/images/pause.svg";
-  const songName = songFileName.replace(/\.mp3$/, "");
+}
 
-  document.querySelector(".songDetails").innerHTML = songName;
+function updateSeekBarDetails(songName) {
+  document.querySelector(".songDetails").innerHTML = `<div class="songInfo">
+                  <img src="/images/music.svg" alt="music" />
+                  <div class="info">
+                    <div class="seekBarSongName">${songName}</div>
+                    <div class="seekBarsongArtist">Sachin-Jigar, Madhubanti Bagchi</div>
+                  </div>
+                </div>`;
 
+  // Add a new event listener
   playimg.addEventListener("click", () => {
-    if (audioPlayer.paused) {
-      audioPlayer.play();
+    if (track.paused) {
+      track.play();
       playimg.src = "/images/pause.svg";
     } else {
-      audioPlayer.pause();
+      track.pause();
       playimg.src = "/images/play.svg";
     }
   });
 }
+async function main() {
+  // fetch songs data from API
+  let data = await fetchData();
+  addSongsInLibrary(data);
+}
+
+main();

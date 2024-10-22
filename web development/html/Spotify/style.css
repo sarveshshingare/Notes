@@ -196,7 +196,8 @@ body {
 .songButtons {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 24px;
+  margin-bottom: 10px;
 }
 
 .songList ul {
@@ -261,35 +262,18 @@ body {
   width: 28px;
 }
 
-/* .seekbar {
-  height: 2px;
-  width: 70vw;
-  border: 2px solid white;
-  border-radius: 10px;
-  position: absolute;
-  bottom: 0px;
-}
-
-.circle {
-  width: 23px;
-  height: 23px;
-  border-radius: 50%;
-  background-color: white;
-  position: absolute;
-  
-} */
 input[type="range"] {
   width: 100%;
   -webkit-appearance: none;
-  background: #1a9c47; /* Spotify green */
-  height: 4px;
+  background: white; /* Spotify green */
+  height: 5px;
   border-radius: 10px;
 }
 
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: 12px;
-  width: 12px;
+  height: 13px;
+  width: 13px;
   border-radius: 50%;
   background: white;
   cursor: pointer;
@@ -341,4 +325,16 @@ input[type="range"]::-webkit-slider-thumb {
   100% {
     transform: translateX(0%); /* Move back to start */
   }
+}
+
+@media (max-width:1400px){
+
+  .left{
+    background-color: red;
+    position: absolute;
+    left: -100%;
+    transition: all 0.5s ease-in  ;
+    z-index: 1;
+  }
+
 }
